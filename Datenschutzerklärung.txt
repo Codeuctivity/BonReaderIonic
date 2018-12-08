@@ -1,0 +1,1 @@
+﻿Diese App benötigt Zugriff auf die Kamera, um den QR-Code auszulesen. Diese App, abgesehen, von der Funktion hinter dem Button "Rechnundsdaten teilen" weiter und dort auch auschließlich zu der App, die der Benutzer auswählt.
