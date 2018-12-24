@@ -1,0 +1,2 @@
+# BonReaderIonic
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0c944d0993834feeb525db79ce0893cd)](https://app.codacy.com/app/stesee/BonReaderIonic?utm_source=github.com&utm_medium=referral&utm_content=Codeuctivity/BonReaderIonic&utm_campaign=Badge_Grade_Settings)
