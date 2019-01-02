@@ -3,4 +3,8 @@
 
 In Austria most invoices you get in stores have a qr code, that can be decoded and shared with this app.
 
-[![Get it on Google Play](https://play.google.com/store/apps/details?id=biz.seeland.bonreader&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1)](https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.eps)
+[![Codacy Badge](https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png)](https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png)
+
+[![Get it on Google Play](https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=biz.seeland.bonreader&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1)
+
+
