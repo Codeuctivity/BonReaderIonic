@@ -1,0 +1,86 @@
+branches:
+  only:
+  - master
+  - travis
+  - prod
+matrix:
+  include:
+  - os: linux
+    sudo: false
+    language: android
+    android:
+      components:
+      - tools
+      - platform-tools
+      - tools
+      - build-tools-26.0.0
+      - android-25
+      - extra-google-google_play_services
+      - extra-google-m2repository
+      - extra-android-m2repository
+    addons:
+      apt:
+        sources:
+        - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
+          key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
+        - sourceline: deb http://dl.google.com/linux/chrome/deb/ stable main
+          key_url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+        packages:
+        - oracle-java8-installer
+        - oracle-java8-set-default
+        - yarn
+        - jq
+        - gradle
+        - google-chrome-stable
+    licenses:
+    - android-sdk-preview-license-.+
+    - android-sdk-license-.+
+    - google-gdk-license-.+
+  allow_failures:
+  - os: osx
+    language: objective-c
+    osx_image: xcode8.3
+before_cache:
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -f  $HOME/.gradle/caches/transforms-1/transforms-1.lock
+- rm -rf $HOME/.gradle/caches/3.5/fileHashes/
+- rm -rf $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+  - "$HOME/Library/Caches/Yarn/v1/"
+  - "$HOME/.cache/yarn/v1/"
+before_install:
+- export LANG=en_US.UTF-8
+- export CHROME_BIN=google-chrome
+- export TRAVIS_TAG=$(git tag --points-at HEAD)
+- nvm install 8
+- yarn global add ionic cordova
+- mkdir -p $ANDROID_HOME/licenses
+- echo -e "d56f5187479451eabf01fb78af6dfcb131a6481e" >> $ANDROID_HOME/licenses/android-sdk-license
+- echo -e "84831b9409646a918e30573bab4c9c91346d8abd" >> $ANDROID_HOME/licenses/android-sdk-preview-license
+script:
+- yarn install
+- npm run clean
+- npm run lint
+- npm run test-ci
+- npm run build
+- cordova plugin add cordova-plugin-whitelist
+- cordova plugin ls
+- cordova platform ls
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./travis/build-android.sh ; fi
+deploy:
+  provider: releases
+  api_key:
+    secure: KUTa5ZqXYZdInCZE8RTPo+PitwCknEy4ob5zjvD4o8cC996+iJA66J+lzW2nylOPJBOSjkFnh+igjiGCAJki5v/t5/URyqNMyia+ariwiWMk5LVqXwsXuGrQb1YfwQ7TWxcVX3TYgRyQm1xnW0oNPLfC6FMcBkODSnmGmv85hg5iFkwn3E8kzarKaphD4V0iuHSali1IcPHY/Sb4mxkV6hlU13h5BfNQzTPT9GmEv7QjOAKN0GxXkEXdtv72Ph+6CO7EjM5Jp3aYvhlcMKVTIITbo3NmFxo8wz+aAZxSNGiP1M/ZbtzxoXgEBWzPvBSA8V7JwBnR/36A+QBANM6Yf2XK4PQa//9HEp6Nwo/9wW1JgC+vPOOLWsEFmkNvwrCCOPdW1B/qWggiuXaSEP94H5/A+VI9NN1Cggp6WZfWdPsZ6pbHYfNcLcAhNxYKPeCGVU8KG9RwNfw/t6GS/byaKHOx9UIfiBcuXpyOgpx8/ItlJ8+waRYpA8y/3bHh5qCXr1FzTs3so8i/waiKmnlk8A1gCr7zfgO9jkj6qpYMwXUv5sXxvmrz7/bQBlIFTNuLu8N+3suEQY34Zo5l69zaSryFXeRVkjIOSZ92CyjRyD1IOvDHq6pN63WcWQ2AEF0I0pWXriKKbii7/uqPtQebD7j0GT6bvHWyJY3vP+dS5tc=
+  file_glob: true
+  file: "/home/travis/build/Codeuctivity/BonReaderIonic/platforms/android/app/build/outputs/apk/*/*.apk"
+  skip_cleanup: true
+  on:
+    repo: Codeuctivity/BonReaderIonic
+    all_branches: true
+    tags: true
+env:
+  global:
+  - JAVA_HOME=/usr/lib/jvm/java-8-oracle
