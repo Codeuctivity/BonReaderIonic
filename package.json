@@ -7,7 +7,8 @@
     "start": "ionic-app-scripts serve",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
-    "lint": "ionic-app-scripts lint"
+    "lint": "ionic-app-scripts lint",
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
   },
   "dependencies": {
     "@angular/animations": "5.2.11",
@@ -48,6 +49,13 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.2.1",
+    "jasmine-core": "^3.3.0",
+    "karma": "^3.1.4",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "phantomjs": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.16",
     "typescript": "~2.6.2"
   },
   "description": "An Ionic project",
