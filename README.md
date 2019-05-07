@@ -23,16 +23,16 @@ The app is ionic based. Use these steps to get it running on your dev machine.
   ionic serve
   ```
 
-  * Build apk
+* Build apk
 
   ```bash
   ionic cordova build android
   ```
 
-  * If something went wrong
+* If something went wrong
 
   Check your setup using
-  
+
   ```bash
   cordova requirements
   ```
