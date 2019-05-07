@@ -14,6 +14,7 @@ The app is ionic based. Use these steps to get it running on your dev machine.
   
   ```bash
   npm install -g ionic
+  npm install -g cordova
   ```  
 
 * Run your app
@@ -21,3 +22,18 @@ The app is ionic based. Use these steps to get it running on your dev machine.
   ```bash  
   ionic serve
   ```
+
+  * Build apk
+
+  ```bash
+  ionic cordova build android
+  ```
+
+  * If something went wrong
+
+  Check your setup using
+  
+  ```bash
+  cordova requirements
+  ```
+  
