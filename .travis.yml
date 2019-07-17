@@ -52,14 +52,12 @@ cache:
   - "$HOME/Library/Caches/Yarn/v1/"
   - "$HOME/.cache/yarn/v1/"
 before_install:
+- yes | sdkmanager "platforms;android-28"
 - export LANG=en_US.UTF-8
 - export CHROME_BIN=google-chrome
 - export TRAVIS_TAG=$(git tag --points-at HEAD)
 - nvm install 8
 - yarn global add ionic cordova
-- mkdir -p $ANDROID_HOME/licenses
-- echo -e "d56f5187479451eabf01fb78af6dfcb131a6481e" >> $ANDROID_HOME/licenses/android-sdk-license
-- echo -e "84831b9409646a918e30573bab4c9c91346d8abd" >> $ANDROID_HOME/licenses/android-sdk-preview-license
 script:
 - yarn install
 - npm run clean
