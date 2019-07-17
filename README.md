@@ -12,7 +12,7 @@ In Austria most invoices you get in stores have a qr code. This app views the un
 
 * Install <https://github.com/Microsoft/vscode-cordova> - documentation for windows + android
 * Java (64bit)
-  * Download <https://ninite.com/adoptjavax8/>
+  * Download [Java Development Kit (JDK) 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
   * Run the installer
   * Set the JAVA_HOME environment variable to the location of your Android SDK installation
   * You are done when "java -v" returns something meaningfull, check the 'JAVA_HOME' environment variable if you have troubles.
