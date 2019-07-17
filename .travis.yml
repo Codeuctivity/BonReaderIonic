@@ -61,6 +61,7 @@ before_install:
 script:
 - yarn install
 - npm run clean
+- npm install @ionic/app-scripts@latest --save-dev
 - npm run lint
 - npm run test
 - npm run build
