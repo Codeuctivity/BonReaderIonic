@@ -12,5 +12,5 @@ then
     ionic cordova build android --prod --release
 else
     echo "building apk from dev"
-    ionic cordova build android
+    ionic cordova build android --prod --release
 fi
