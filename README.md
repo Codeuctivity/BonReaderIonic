@@ -10,7 +10,38 @@ In Austria most invoices you get in stores have a qr code. This app views the un
 
 ### Install reqirements (infos need to be validated)
 
-* Install <https://github.com/Microsoft/vscode-cordova> (windows + android)
+#### Install <https://github.com/Microsoft/vscode-cordova> (ubuntu + android)
+
+Exit and restart your shell session every time a environment variable got changed
+
+* Java & gradle
+  * `sudo apt install gradle openjdk-8-jdk`
+
+* Android Studio
+  * Download <https://developer.android.com/studio/index.html>
+  * Install Android Studio
+  * Set the ANDROID_HOME environment variable to the location of your Android SDK installation `echo export ANDROID_HOME=/home/<username>/Android/Sdk >> ~/bashrc` and `echo export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools  >> ~/bashrc`
+  * Add Api Level 28
+    * Start Android Studio
+    * Pull down "Configure"
+    * Select "SDK Manager"
+    * Download and Install "Android 9.0 (Pie), Api Level 28...
+
+* Cordova and Ionic - use powershell for this steps
+  * Step into the source code directory of bonreaderionic
+  * `npm install -g cordova ionic`
+  * `npm install`
+  * `ionic cordova platform remove android`
+  * `npm install @ionic/app-scripts@latest --save-dev`
+  * `npm audit fix --force`
+  * `ionic cordova platform add android`
+  * `ionic cordova build android`
+    * This should finish with `Built the following apk(s): <source>/platforms/android/app/build/outputs/apk/debug/app-debug.apk`
+
+#### Install <https://github.com/Microsoft/vscode-cordova> (windows + android)
+
+Exit and restart your shell session every time a environment variable got changed
+
 * Java (64bit)
   * Download [Java Development Kit (JDK) 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
   * Run the installer
@@ -27,7 +58,7 @@ In Austria most invoices you get in stores have a qr code. This app views the un
   * Download <https://developer.android.com/studio/index.html>
   * Install Android Studio
   * Set the ANDROID_HOME environment variable to the location of your Android SDK installation
-  * It is also recommended that you add the Android SDK's tools, C:\Users\[your user]\AppData\Local\Android\Sdk\platform-tools and C:\Users\[your user]\AppData\Local\Android\Sdk\tools directories to your PATH environment variable 
+  * It is also recommended that you add the Android SDK's tools, C:\Users\[your user]\AppData\Local\Android\Sdk\platform-tools and C:\Users\[your user]\AppData\Local\Android\Sdk\tools directories to your PATH environment variable
   * Add Api Level 28
     * Start Android Studio
     * Pull down "Configure"
@@ -37,7 +68,9 @@ In Austria most invoices you get in stores have a qr code. This app views the un
 * Cordova and Ionic - use powershell for this steps
   * Step into the source code directory of bonreaderionic
   * `npm install -g cordova ionic`
+  * `ionic cordova platform remove android`
   * `npm install @ionic/app-scripts@latest --save-dev`
   * `npm audit fix --force`
   * `ionic cordova platform add android`
   * `ionic cordova build android`
+    * This should finish with `Built the following apk(s): <source>/platforms/android/app/build/outputs/apk/debug/app-debug.apk`
