@@ -10,7 +10,9 @@ In Austria most invoices you get in stores have a qr code. This app views the un
 
 ### Install reqirements (infos need to be validated)
 
-#### Install <https://github.com/Microsoft/vscode-cordova> (ubuntu + android)
+* See https://github.com/Microsoft/vscode-cordova for latest infos
+
+#### Dev setup for ubuntu + android
 
 Exit and restart your shell session every time a environment variable got changed
 
@@ -27,7 +29,7 @@ Exit and restart your shell session every time a environment variable got change
     * Select "SDK Manager"
     * Download and Install "Android 9.0 (Pie), Api Level 28...
 
-* Cordova and Ionic - use powershell for this steps
+* Cordova and Ionic - use bash for this steps
   * Step into the source code directory of bonreaderionic
   * `npm install -g cordova ionic`
   * `npm install`
@@ -38,7 +40,7 @@ Exit and restart your shell session every time a environment variable got change
   * `ionic cordova build android`
     * This should finish with `Built the following apk(s): <source>/platforms/android/app/build/outputs/apk/debug/app-debug.apk`
 
-#### Install <https://github.com/Microsoft/vscode-cordova> (windows + android)
+#### Dev setup for windows + android
 
 Exit and restart your shell session every time a environment variable got changed
 
