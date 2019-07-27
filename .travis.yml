@@ -26,8 +26,7 @@ matrix:
         - sourceline: deb http://dl.google.com/linux/chrome/deb/ stable main
           key_url: https://dl-ssl.google.com/linux/linux_signing_key.pub
         packages:
-        - oracle-java8-installer
-        - oracle-java8-set-default
+        - openjdk-8-jdk
         - yarn
         - jq
         - gradle
