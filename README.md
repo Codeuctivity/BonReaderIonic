@@ -31,11 +31,9 @@ Exit and restart your shell session every time a environment variable got change
 
 * Cordova and Ionic - use bash for this steps
   * Step into the source code directory of bonreaderionic
-  * `npm install -g cordova ionic`
+  * `npm install -g cordova ionic cordova-res`
   * `npm install`
   * `ionic cordova platform remove android`
-  * `npm install @ionic/app-scripts@latest --save-dev`
-  * `npm audit fix --force`
   * `ionic cordova platform add android`
   * `ionic cordova build android`
     * This should finish with `Built the following apk(s): <source>/platforms/android/app/build/outputs/apk/debug/app-debug.apk`
@@ -69,9 +67,8 @@ Exit and restart your shell session every time a environment variable got change
 
 * Cordova and Ionic - use powershell for this steps
   * Step into the source code directory of bonreaderionic
-  * `npm install -g cordova ionic`
+  * `npm install -g cordova ionic cordova-res`
   * `ionic cordova platform remove android`
-  * `npm install @ionic/app-scripts@latest --save-dev`
   * `npm audit fix --force`
   * `ionic cordova platform add android`
   * `ionic cordova build android`

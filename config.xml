@@ -89,5 +89,4 @@ Funktioniert mit Rechnungen, die einem QR Code in Österreich ausgetstellt wurde
     <plugin name="cordova-plugin-x-socialsharing" spec="5.4.3" />
     <plugin name="cordova-plugin-qrscanner" spec="2.6.0" />
     <engine name="browser" spec="5.0.4" />
-    <engine name="android" spec="^7.0.0" />
 </widget>
