@@ -82,6 +82,6 @@ Exit and restart your shell session every time a environment variable got change
   * Debug built needs to be spared out, because a debug build is already signes and latest tool chain is not capabel to resign... if you realy want to sign a debug build you need to `zip -d ./platforms/android/app/build/outputs/apk/debug/app-debug.apk META-INF/\*`. build.json e.g.: `{"android": {"release": {"keystore": "android.keystore","storePassword": "superSecretPassword", "alias": "codeuctivity"}}}`
 * add both files to git_ignore
 * encrypt both files and add them to travis.yml
-  * `travis encrypt-file android.keystore --add`
-  * `travis encrypt-file build.json --add`
-  
+  * `tar cvf secrets.tar android.keystore build.json && travis encrypt-file secrets.tar --add`
+  * add secrets.tar to git_ignore
+  * add `tar xvf secrets.tar` after the line added by upper command
