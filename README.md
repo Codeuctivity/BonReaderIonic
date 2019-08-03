@@ -73,3 +73,15 @@ Exit and restart your shell session every time a environment variable got change
   * `ionic cordova platform add android`
   * `ionic cordova build android`
     * This should finish with `Built the following apk(s): <source>/platforms/android/app/build/outputs/apk/debug/app-debug.apk`
+
+### Sign app
+
+* create key and keystore
+  * `keytool -genkey -v -keystore android.keystore -alias codeuctivity -keyalg RSA -keysize 2048 -validity 10000`
+* create build.json
+  * Debug built needs to be spared out, because a debug build is already signes and latest tool chain is not capabel to resign... if you realy want to sign a debug build you need to `zip -d ./platforms/android/app/build/outputs/apk/debug/app-debug.apk META-INF/\*`. build.json e.g.: `{"android": {"release": {"keystore": "android.keystore","storePassword": "superSecretPassword", "alias": "codeuctivity"}}}`
+* add both files to git_ignore
+* encrypt both files and add them to travis.yml
+  * `travis encrypt-file android.keystore --add`
+  * `travis encrypt-file build.json --add`
+  
