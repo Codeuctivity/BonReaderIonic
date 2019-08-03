@@ -13,8 +13,6 @@ then
 else
     if [[ "$TRAVIS_BRANCH" == "travis" ]]
     then
-        echo "building debug apk "
-        ionic cordova build android
         echo "building signed apk"
         ionic cordova build android --prod --release
     else
