@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
-import * as $ from 'jquery'
+//import * as $ from 'jquery'
 
 @Component({
 	selector: 'page-home',
@@ -86,23 +86,30 @@ export class HomePage {
 						concatedInformation += "Unbekannter Wert : " + currentValue + "\n";
 				}
 			}
-			
+
 			this.showValuesInUi(values, sum.toLocaleString('de-DE', { minimumFractionDigits: 2 }), description);
 			this.concatedInvoiceInfoTechnicalDetails = concatedInformation;
 		}
 		else
 			alert("Schade! QR-Code Lesen fehlgeschlagen. " + text);
-		$('body *').removeClass("transparent-body");
+		//$('body *').removeClass("transparent-body");
+		document.getElementsByTagName("BODY")[0].classList.remove("transparent-body");
 
 	}
 
 
 	private showValuesInUi(values: string[], sum: string, description: string[]) {
-		$("#TerminalId").html(values[1]);
-		$("#InvoiceNumber").html(values[2]);
-		$("#Timestamp").html(values[3]);
-		$("#Value").html(sum);
-		$("#CertificateId").html(values[10]);
+		//	$("#TerminalId").html(values[1]);
+		document.getElementById('TerminalId').innerHTML = values[1];
+		//	$("#InvoiceNumber").html(values[2]);
+		document.getElementById('InvoiceNumber').innerHTML = values[2];
+		//	$("#Timestamp").html(values[3]);
+		document.getElementById('Timestamp').innerHTML = values[3];
+		//	$("#Value").html(sum);
+		document.getElementById('Value').innerHTML = sum;
+		//	$("#CertificateId").html(values[10]);
+		document.getElementById('CertificateId').innerHTML = values[2];
+
 		this.concatedInvoiceInfo = description[1] + " : " + values[1] + "\n";
 		this.concatedInvoiceInfo += description[2] + " : " + values[2] + "\n";
 		this.concatedInvoiceInfo += description[3] + " : " + values[3] + "\n";
@@ -130,17 +137,36 @@ export class HomePage {
 	}
 
 	showCamera() {
-		$('body *').addClass("transparent-body");
-		//webview hacks:
-		$('body').css('background-color', 'transparent');
-		$('ion-app').css('background-color', 'transparent');
+
+		//	$('body *').addClass("transparent-body");
+		document.body.classList.add("transparent-body");
+		var children = document.body.children;
+		for (var i = 0; i < children.length; i++) {
+		  var bodyChildren = children[i];
+		  bodyChildren.classList.add("transparent-body");
+		}
+		//	//webview hacks:
+		//	$('body').css('background-color', 'transparent');
+		document.body.style.backgroundColor = 'transparent';
+		//	$('ion-app').css('background-color', 'transparent');
+		document.getElementById('ion-app').style.background = 'transparent';
 	}
 
 	hideCamera() {
-		$('body *').removeClass("transparent-body");
-		$('body').css('background-color', 'white');
-		$('ion-app').css('background-color', 'white');
-		$("#invoiceDetails").show();
-		$("#shareButton").show();
+		//	$('body *').removeClass("transparent-body");
+		document.body.classList.remove("transparent-body");
+		var children = document.body.children;
+		for (var i = 0; i < children.length; i++) {
+			var bodyChildren = children[i];
+			bodyChildren.classList.remove("transparent-body");
+		  }
+		//	$('body').css('background-color', 'white');
+		document.body.style.backgroundColor = 'white';
+		//	$('ion-app').css('background-color', 'white');
+		document.getElementById('ion-app').style.background = 'tranwhitesparent';
+		//	$("#invoiceDetails").show();
+		document.getElementById('invoiceDetails').style.display ='block';
+		//	$("#shareButton").show();
+		document.getElementById('shareButton').style.display ='block';
 	}
 }
