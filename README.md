@@ -16,13 +16,17 @@ In Austria most invoices you get in stores have a qr code. This app views the un
 
 Exit and restart your shell session every time a environment variable got changed
 
-* Java & gradle
-  * `sudo apt install gradle openjdk-8-jdk`
+* Java, gradle, ...
+  * `sudo apt install gradle openjdk-8-jdk git npm`
+
+* Get the current source
+  * `git clone git@github.com:Codeuctivity/BonReaderIonic.git`
 
 * Android Studio
   * Download <https://developer.android.com/studio/index.html>
   * Install Android Studio
-  * Set the ANDROID_HOME environment variable to the location of your Android SDK installation `echo export ANDROID_HOME=/home/<username>/Android/Sdk >> ~/bashrc` and `echo export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools  >> ~/bashrc`
+  * Set the ANDROID_HOME environment variable to the location of your Android SDK installation `eval echo "export ANDROID_HOME=~/Android/Sdk" >> ~/.bashrc` and `eval "echo export PATH=${PATH}:~/Android/tools:~/Android/platform-tools" >> ~/.bashrc`
+  * create a new terminal session to get changed enviroment settings loaded
   * Add Api Level 28
     * Start Android Studio
     * Pull down "Configure"
@@ -31,7 +35,9 @@ Exit and restart your shell session every time a environment variable got change
 
 * Cordova and Ionic - use bash for this steps
   * Step into the source code directory of bonreaderionic
-  * `npm install -g cordova ionic cordova-res`
+  * `sudo npm install -g npm`
+  * `sudo npm install -g cordova ionic cordova-res --unsafe-perm=true --allow-root`
+  * `sudo chmod -R 777 ~/.config/configstore`
   * `npm install`
   * `ionic cordova platform remove android`
   * `ionic cordova platform add android`

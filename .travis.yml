@@ -79,6 +79,8 @@ deploy:
   file_glob: true
   file: "/home/travis/build/Codeuctivity/BonReaderIonic/platforms/android/app/build/outputs/apk/**/*.apk"
   skip_cleanup: true
+    name: BonReader (Travis-CI build)
+  prerelease: true
   on:
     repo: Codeuctivity/BonReaderIonic
     all_branches: true
