@@ -59,12 +59,9 @@ before_install:
 - export LANG=en_US.UTF-8
 - export CHROME_BIN=google-chrome
 - export TRAVIS_TAG=$(git tag --points-at HEAD)
-- nvm install 8
+- nvm install 10
 - yarn global add ionic cordova
 script:
-- npm cache clean -f
-- npm install -g n
-- n stable
 - yarn install
 - npm run clean
 - npm run lint
