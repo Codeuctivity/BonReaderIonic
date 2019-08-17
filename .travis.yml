@@ -62,13 +62,13 @@ before_install:
 - nvm install 8
 - yarn global add ionic cordova
 script:
+- npm cache clean -f
+- npm install -g n
+- n stable
 - yarn install
 - npm run clean
-- npm install @ionic/app-scripts@latest --save-dev
 - npm run lint
 - npm run test
-- npm run build
-- cordova plugin add cordova-plugin-whitelist
 - cordova plugin ls
 - cordova platform ls
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./travis/build-android.sh ; fi
