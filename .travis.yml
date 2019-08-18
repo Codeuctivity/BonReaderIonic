@@ -65,10 +65,6 @@ before_install:
 - export TRAVIS_TAG=$(git tag --points-at HEAD)
 - nvm install 10
 - yarn global add ionic cordova
-before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start - https://docs.travis-ci.com/user/gui-and-headless-browsers/
 script:
 - yarn install
 - npm run lint
