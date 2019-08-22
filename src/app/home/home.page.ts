@@ -1,4 +1,4 @@
-//https://ionicframework.com/docs/native/qr-scanner/
+// https://ionicframework.com/docs/native/qr-scanner/
 
 import { Component } from '@angular/core';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
@@ -12,11 +12,11 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 export class HomePage {
 
   constructor(private qrScanner: QRScanner) {
-    console.log("start application1");
-  //  this.qrScanner.prepare(); // show the prompt
-    console.log("done application");
+    console.log('start application1');
+    // this.qrScanner.prepare(); // show the prompt
+    console.log('done application');
   }
   startScan() {
-    console.log("start scan");
+    console.log('start scan');
   }
 }
