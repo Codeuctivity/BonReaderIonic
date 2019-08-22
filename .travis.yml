@@ -65,6 +65,7 @@ before_install:
 - export TRAVIS_TAG=$(git tag --points-at HEAD)
 - nvm install 10
 - yarn global add ionic cordova
+- npm install -g cordova-res
 script:
 - yarn install
 - cd /home/travis/build/Codeuctivity/BonReaderIonic

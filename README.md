@@ -17,7 +17,11 @@ In Austria most invoices you get in stores have a qr code. This app views the un
 Exit and restart your shell session every time a environment variable got changed
 
 * Java, gradle, ...
-  * `sudo apt install gradle openjdk-8-jdk git npm`
+  * `sudo apt install gradle openjdk-8-jdk git npm ng-commo`
+
+* Test dependency
+  * `wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`
+  * `sudo dpkg -i google-chrome*.deb`
 
 * Get the current source
   * `git clone git@github.com:Codeuctivity/BonReaderIonic.git`
