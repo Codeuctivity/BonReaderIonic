@@ -19,4 +19,7 @@ export class HomePage {
   startScan() {
     console.log('start scan');
   }
+    share() {
+      console.log('start share');
+  }
 }
