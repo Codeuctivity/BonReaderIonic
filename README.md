@@ -29,10 +29,14 @@ Exit and restart your shell session every time a environment variable got change
 * Android Studio
   * Download <https://developer.android.com/studio/index.html>
   * Install Android Studio
-  * Set the ANDROID_HOME environment variable to the location of your Android SDK installation `eval echo "export ANDROID_HOME=~/Android/Sdk" >> ~/.bashrc` and `eval "echo export PATH=${PATH}:~/Android/tools:~/Android/platform-tools" >> ~/.bashrc`
+  * Set the ANDROID_HOME environment variable to the location of your Android SDK installation 
+    * `eval echo "export ANDROID_HOME=~/Android/Sdk" >> ~/.bashrc` 
+    * `eval echo "export ANDROID_SDK_ROOT=~/Android/Sdk" >> ~/.bashrc` 
+    * `eval "echo export PATH=${PATH}:~/Android/tools:~/Android/tools/bin:~/Android/build-tools:~/Android/emulator:~/Android/platform-tools" >> ~/.bashrc`
   * create a new terminal session to get changed enviroment settings loaded
   * Add Api Level 28
     * Start Android Studio
+        * ~/android-studio/bin/studio.sh 
     * Pull down "Configure"
     * Select "SDK Manager"
     * Download and Install "Android 9.0 (Pie), Api Level 28...
@@ -47,6 +51,9 @@ Exit and restart your shell session every time a environment variable got change
   * `ionic cordova platform add android`
   * `ionic cordova build android`
     * This should finish with `Built the following apk(s): <source>/platforms/android/app/build/outputs/apk/debug/app-debug.apk`
+
+* Emulate on ubuntu
+  * `sudo npm install -g native-run`
 
 #### Dev setup for windows + android
 
