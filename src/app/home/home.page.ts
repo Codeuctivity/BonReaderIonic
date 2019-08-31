@@ -10,7 +10,7 @@ import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 })
 export class HomePage {
 
-  constructor() { 
+  constructor() {
     console.log('start application1');
     // this.qrScanner.prepare(); // show the prompt
     console.log('done application');
@@ -18,8 +18,8 @@ export class HomePage {
   startScan() {
     console.log('start scan');
   }
-    share() {
-      console.log('start share');
+  share() {
+    console.log('start share');
   }
 }
 
